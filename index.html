@@ -580,32 +580,45 @@
 
     .developer-badge {
       display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .developer-member {
+      display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .developer-avatar {
-      width: 60px;
-      height: 60px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       border: 2px solid rgba(255,255,255,0.1);
+      flex-shrink: 0;
     }
 
     .developer-details h4 {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+      font-size: 1rem;
+      margin-bottom: 3px;
     }
 
-    .developer-details p {
-      font-size: 0.9rem;
-      margin-bottom: 0;
-      color: var(--text-gray);
+    .developer-details a {
+      font-size: 0.82rem;
+      color: var(--secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .developer-details a:hover {
+      color: var(--primary);
+      text-decoration: underline;
     }
 
     /* Formulario */
@@ -746,7 +759,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="logo">
-        <i class="fa-solid fa-code"></i> Xavier <span>WebDev</span>
+        <i class="fa-solid fa-code"></i> Grupo <span>4</span>
       </a>
       <ul class="nav-links">
         <li><a href="#" class="active">Inicio</a></li>
@@ -969,10 +982,26 @@
         <p>Si conoces un negocio con excelente reputación en Google Maps pero que no tiene sitio web, mándanos su nombre y municipio para diseñarle una landing page personalizada gratis.</p>
         
         <div class="developer-badge">
-          <div class="developer-avatar">X</div>
-          <div class="developer-details">
-            <h4>Xavier WebDev</h4>
-            <p>Desarrollador Web Freelancer en Nicaragua</p>
+          <div class="developer-member">
+            <div class="developer-avatar">B</div>
+            <div class="developer-details">
+              <h4>Bryan Josué Bermúdez</h4>
+              <a href="https://github.com/bryanjbb" target="_blank"><i class="fa-brands fa-github"></i> github.com/bryanjbb</a>
+            </div>
+          </div>
+          <div class="developer-member">
+            <div class="developer-avatar">J</div>
+            <div class="developer-details">
+              <h4>Julissa Xaviera Pérez Quezada</h4>
+              <a href="https://github.com/xavi-pq" target="_blank"><i class="fa-brands fa-github"></i> github.com/xavi-pq</a>
+            </div>
+          </div>
+          <div class="developer-member">
+            <div class="developer-avatar">Je</div>
+            <div class="developer-details">
+              <h4>Jeremy José Álvarez Obando</h4>
+              <a href="https://github.com/MERALTIAN" target="_blank"><i class="fa-brands fa-github"></i> github.com/MERALTIAN</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1006,13 +1035,14 @@
   <!-- Footer -->
   <footer>
     <div class="footer-container">
-      <a href="#" class="footer-logo">Xavier <span>WebDev</span></a>
+      <a href="#" class="footer-logo">Grupo <span>4</span></a>
       <div class="footer-text">
-        &copy; 2026 Xavier WebDev - Portafolio de Propuestas Comerciales. Todos los derechos reservados.
+        &copy; 2026 Grupo 4 - Portafolio de Propuestas Comerciales. Todos los derechos reservados.
       </div>
       <div class="footer-socials">
-        <a href="https://github.com/xavie" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://wa.me/50588888888?text=Hola%20Xavier,%20vi%20tu%20portafolio%20de%20propuestas%20web." target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://github.com/bryanjbb" target="_blank" title="Bryan - GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://github.com/xavi-pq" target="_blank" title="Julissa - GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://github.com/MERALTIAN" target="_blank" title="Jeremy - GitHub"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
   </footer>
@@ -1053,7 +1083,7 @@
       // Developer's WhatsApp Number
       const devPhone = '50588888888';
       
-      const text = `Hola Xavier, te propongo un nuevo negocio para prospectar:\n\n*Negocio:* ${name}\n*Ciudad:* ${city}\n*Teléfono:* ${phone}\n*Detalles:* ${details}`;
+      const text = `Hola Grupo 4, les propongo un nuevo negocio para prospectar:\n\n*Negocio:* ${name}\n*Ciudad:* ${city}\n*Teléfono:* ${phone}\n*Detalles:* ${details}`;
       
       const waUrl = `https://wa.me/${devPhone}?text=${encodeURIComponent(text)}`;
       window.open(waUrl, '_blank');
