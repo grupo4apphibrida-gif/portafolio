@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Propuestas de Diseño Web para Negocios Locales en Nicaragua</title>
+  <meta name="description" content="Portafolio interactivo de desarrollo y diseño web. Propuestas personalizadas de páginas web profesionales para negocios locales de Nicaragua con excelente reputación en Google Maps.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Variables y Estilos Base (Tema Dark Premium) */
+    :root {
+      --primary: #a855f7; /* Violeta Neón */
+      --secondary: #06b6d4; /* Cian Neón */
+      --bg-dark: #090d16; /* Fondo base ultra oscuro */
+      --bg-card: rgba(17, 24, 39, 0.7); /* Gris con transparencia para glassmorphism */
+      --text-light: #f8fafc;
+      --text-gray: #94a3b8;
+      --font-title: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Grid de fondo tecnológico */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px),
+                        radial-gradient(rgba(6, 118, 212, 0.08) 1.5px, transparent 1.5px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo i {
+      color: var(--secondary);
+      font-size: 1.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 140px 24px 100px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Luces decorativas traseras */
+    .hero-glow-1 {
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 300px;
+      height: 300px;
+      background: rgba(168, 85, 247, 0.15);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 10%;
+      right: 20%;
+      width: 300px;
+      height: 300px;
+      background: rgba(6, 182, 212, 0.15);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #dfaeff;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary) 30%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(168, 85, 247, 0.6);
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .section-title h2 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-title p {
+      color: var(--text-gray);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Propuestas Web Grid */
+    .proposals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .proposal-card {
+      background-color: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .proposal-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .proposal-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Simulación de Preview Visual de la Web */
+    .proposal-preview {
+      height: 220px;
+      position: relative;
+      background-size: cover;
+      background-position: top center;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .preview-taller {
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.2), rgba(9, 13, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80');
+    }
+    
+    .preview-salon {
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.2), rgba(9, 13, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .preview-farmacia {
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.2), rgba(9, 13, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .preview-comedor {
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.2), rgba(9, 13, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .preview-veterinaria {
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.2), rgba(9, 13, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .proposal-badge-location {
+      background-color: rgba(9, 13, 22, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: auto;
+    }
+
+    .proposal-badge-location i {
+      color: var(--secondary);
+    }
+
+    .proposal-stars {
+      background-color: rgba(234, 88, 12, 0.15);
+      border: 1px solid rgba(234, 88, 12, 0.3);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #f97316;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .proposal-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .proposal-body h3 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .proposal-body p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .proposal-stats-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+
+    .proposal-stats-row span strong {
+      color: #fff;
+    }
+
+    .proposal-footer {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-card-demo {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-card-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+    }
+
+    .btn-card-whatsapp {
+      background-color: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-card-whatsapp:hover {
+      background-color: rgba(37, 211, 102, 0.1);
+      border-color: #25d366;
+      color: #25d366;
+    }
+
+    /* Proceso de Venta (Google Maps SEO) */
+    .process-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .process-card {
+      background-color: var(--bg-card);
+      padding: 40px 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .process-number {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+
+    .process-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .process-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+
+    /* Contacto / Cotización */
+    .contact-form-section {
+      background-color: var(--bg-card);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .contact-info h3 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-info p {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .developer-badge {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .developer-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.4rem;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .developer-details h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .developer-details p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: var(--text-gray);
+    }
+
+    /* Formulario */
+    .form-box {
+      background-color: rgba(9, 13, 22, 0.6);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: var(--bg-dark);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #05080f;
+      padding: 50px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--secondary);
+    }
+
+    .footer-text {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-gray);
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--secondary);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .contact-form-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero {
+        padding: 100px 24px 70px 24px;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-code"></i> Xavier <span>WebDev</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Inicio</a></li>
+        <li><a href="#propuestas">Propuestas</a></li>
+        <li><a href="#proceso">Estrategia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <div class="hero-content">
+      <div class="hero-tag">
+        <i class="fa-solid fa-map-location-dot"></i> Portafolio de Ventas Web - Nicaragua
+      </div>
+      <h1>Creamos sitios web para <span>Negocios Destacados</span> de Google Maps</h1>
+      <p>Buscamos negocios de alto prestigio local con excelentes reseñas de clientes, pero que carecen de página web. Desarrollamos propuestas interactivas en vivo para ayudarlos a dar el gran salto digital.</p>
+      <div class="cta-group">
+        <a href="#propuestas" class="btn btn-primary">Ver Propuestas de Diseño</a>
+        <a href="#contacto" class="btn btn-secondary">Solicitar Propuesta Gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Propuestas Grid -->
+  <section id="propuestas">
+    <div class="section-title">
+      <h2>Propuestas <span>Diseñadas</span></h2>
+      <p>Prototipos funcionales interactivos listos para ser conectados al dominio oficial de cada negocio.</p>
+    </div>
+    
+    <div class="proposals-grid">
+      
+      <!-- Taller Mecánico El Rápido -->
+      <div class="proposal-card">
+        <div class="proposal-preview preview-taller">
+          <div class="proposal-badge-location">
+            <i class="fa-solid fa-map-pin"></i> Managua
+          </div>
+        </div>
+        <div class="proposal-body">
+          <div style="margin-bottom: 12px;">
+            <div class="proposal-stars"><i class="fa-solid fa-star"></i> 4.6 (28 Reseñas)</div>
+          </div>
+          <h3>Taller Mecánico El Rápido</h3>
+          <p>Un taller automotriz consolidado en Barrio San Judas con una reputación excelente. Su landing page destaca la transparencia de sus fallos mecánicos y canaliza las cotizaciones directo al WhatsApp del mecánico.</p>
+          <div class="proposal-stats-row">
+            <span>Municipio: <strong>Managua</strong></span>
+            <span>Contacto: <strong>8888-1234</strong></span>
+          </div>
+          <div class="proposal-footer">
+            <a href="./taller-el-rapido/index.html" class="btn-card-demo" target="_blank">
+              <i class="fa-solid fa-square-arrow-up-right"></i> Ver Demo
+            </a>
+            <a href="https://wa.me/50588881234?text=Estimado%20Taller%20Mec%C3%A1nico%20El%20R%C3%A1pido,%20he%20dise%C3%B1ado%20una%20propuesta%20web%20para%20ustedes.%20Pueden%20verla%20aqu%C3%AD:" class="btn-card-whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Ofrecer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salón de Belleza Glamour Style -->
+      <div class="proposal-card">
+        <div class="proposal-preview preview-salon">
+          <div class="proposal-badge-location">
+            <i class="fa-solid fa-map-pin"></i> Ciudad Sandino
+          </div>
+        </div>
+        <div class="proposal-body">
+          <div style="margin-bottom: 12px;">
+            <div class="proposal-stars"><i class="fa-solid fa-star"></i> 4.7 (35 Reseñas)</div>
+          </div>
+          <h3>Salón Glamour Style</h3>
+          <p>Estilismo y estética con alta reputación y reseñas que alaban sus diseños de uñas. Su web premium en tonos oro rosa y negro proyecta distinción y facilita el agendamiento de citas.</p>
+          <div class="proposal-stats-row">
+            <span>Municipio: <strong>Ciudad Sandino</strong></span>
+            <span>Contacto: <strong>8754-3321</strong></span>
+          </div>
+          <div class="proposal-footer">
+            <a href="./salon-glamour-style/index.html" class="btn-card-demo" target="_blank">
+              <i class="fa-solid fa-square-arrow-up-right"></i> Ver Demo
+            </a>
+            <a href="https://wa.me/50587543321?text=Estimado%20Sal%C3%B3n%20Glamour%20Style,%20he%20preparado%20esta%20propuesta%20web%20para%20ustedes.%20M%C3%ADrenla%20en:" class="btn-card-whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Ofrecer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Farmacia La Salud -->
+      <div class="proposal-card">
+        <div class="proposal-preview preview-farmacia">
+          <div class="proposal-badge-location">
+            <i class="fa-solid fa-map-pin"></i> Masaya
+          </div>
+        </div>
+        <div class="proposal-body">
+          <div style="margin-bottom: 12px;">
+            <div class="proposal-stars"><i class="fa-solid fa-star"></i> 4.5 (19 Reseñas)</div>
+          </div>
+          <h3>Farmacia La Salud</h3>
+          <p>Farmacia muy céntrica y concurrida cerca del mercado de Masaya. Su landing page optimiza los pedidos express de delivery y la carga rápida de recetas médicas mediante WhatsApp.</p>
+          <div class="proposal-stats-row">
+            <span>Municipio: <strong>Masaya</strong></span>
+            <span>Contacto: <strong>8822-5566</strong></span>
+          </div>
+          <div class="proposal-footer">
+            <a href="./farmacia-la-salud/index.html" class="btn-card-demo" target="_blank">
+              <i class="fa-solid fa-square-arrow-up-right"></i> Ver Demo
+            </a>
+            <a href="https://wa.me/50588225566?text=Estimada%20Farmacia%20La%20Salud,%20he%20creado%20este%20sitio%20web%20demostrativo%20para%20mejorar%20su%20presencia%20digital.%20Ver%20aqu%C3%AD:" class="btn-card-whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Ofrecer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comedor Doña Marta -->
+      <div class="proposal-card">
+        <div class="proposal-preview preview-comedor">
+          <div class="proposal-badge-location">
+            <i class="fa-solid fa-map-pin"></i> León
+          </div>
+        </div>
+        <div class="proposal-body">
+          <div style="margin-bottom: 12px;">
+            <div class="proposal-stars"><i class="fa-solid fa-star"></i> 4.8 (42 Reseñas)</div>
+          </div>
+          <h3>Comedor Doña Marta</h3>
+          <p>Un comedor tradicional de sazón casero de alta demanda en el centro de León. La web cuenta con un diseño rústico apetecible e incluye un sistema dinámico para solicitar catering o encargar el menú del día.</p>
+          <div class="proposal-stats-row">
+            <span>Municipio: <strong>León</strong></span>
+            <span>Contacto: <strong>8999-1122</strong></span>
+          </div>
+          <div class="proposal-footer">
+            <a href="./comedor-dona-marta/index.html" class="btn-card-demo" target="_blank">
+              <i class="fa-solid fa-square-arrow-up-right"></i> Ver Demo
+            </a>
+            <a href="https://wa.me/50589991122?text=Estimado%20Comedor%20Do%C3%B1a%20Marta,%20dise%C3%B1%C3%A9%20esta%20p%C3%A1gina%20web%20para%20atraer%20m%C3%A1s%20clientes%20a%20su%20negocio.%20M%C3%ADrenla%20en:" class="btn-card-whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Ofrecer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veterinaria Animal Care -->
+      <div class="proposal-card">
+        <div class="proposal-preview preview-veterinaria">
+          <div class="proposal-badge-location">
+            <i class="fa-solid fa-map-pin"></i> Granada
+          </div>
+        </div>
+        <div class="proposal-body">
+          <div style="margin-bottom: 12px;">
+            <div class="proposal-stars"><i class="fa-solid fa-star"></i> 4.6 (23 Reseñas)</div>
+          </div>
+          <h3>Veterinaria Animal Care</h3>
+          <p>Servicios de salud para mascotas en la turística Granada. La landing page presenta de forma tierna e interactiva las consultas, vacunación y peluquería canina con agendamiento rápido.</p>
+          <div class="proposal-stats-row">
+            <span>Municipio: <strong>Granada</strong></span>
+            <span>Contacto: <strong>8777-3344</strong></span>
+          </div>
+          <div class="proposal-footer">
+            <a href="./veterinaria-animal-care/index.html" class="btn-card-demo" target="_blank">
+              <i class="fa-solid fa-square-arrow-up-right"></i> Ver Demo
+            </a>
+            <a href="https://wa.me/50587773344?text=Estimada%20Veterinaria%20Animal%20Care,%20he%20preparado%20este%20sitio%20web%20para%20ustedes.%20Pueden%20verlo%20aqu%C3%AD:" class="btn-card-whatsapp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Ofrecer
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Estrategia de Prospección -->
+  <section id="proceso" style="background-color: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="section-title">
+      <h2>Nuestra <span>Estrategia de Ventas</span></h2>
+      <p>Cómo logramos que los dueños de negocios locales deseen comprar nuestros sitios web.</p>
+    </div>
+    
+    <div class="process-container">
+      <div class="process-card">
+        <div class="process-number">01</div>
+        <h3>Filtro de Excelencia</h3>
+        <p>Buscamos negocios en Google Maps que tengan más de 4.5 estrellas y reseñas reales activas. Su alta calidad garantiza que valoran su reputación.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">02</div>
+        <h3>Detección de Vacíos</h3>
+        <p>Identificamos aquellos que carecen de página web oficial o poseen un enlace roto, lo que limita su capacidad de captar clientes digitales de forma directa.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">03</div>
+        <h3>Propuesta Visual (Demo)</h3>
+        <p>No vendemos promesas: construimos la landing page completa con su información y ubicación real de Google Maps. Mostramos el resultado final funcionando en vivo.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">04</div>
+        <h3>Cierre en WhatsApp</h3>
+        <p>Enlazamos todos los formularios a su WhatsApp para que sientan la interactividad. Les proponemos conectar su propio dominio oficial para activar la web.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto">
+    <div class="contact-form-section">
+      <div class="contact-info">
+        <h3>¿Quieres proponer un negocio <span>Nuevo?</span></h3>
+        <p>Si conoces un negocio con excelente reputación en Google Maps pero que no tiene sitio web, mándanos su nombre y municipio para diseñarle una landing page personalizada gratis.</p>
+        
+        <div class="developer-badge">
+          <div class="developer-avatar">X</div>
+          <div class="developer-details">
+            <h4>Xavier WebDev</h4>
+            <p>Desarrollador Web Freelancer en Nicaragua</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-box">
+        <form id="propose-business-form">
+          <div class="form-group">
+            <label for="p-name">Nombre del Negocio</label>
+            <input type="text" id="p-name" class="form-control" placeholder="Ej. Ferretería El Progreso" required>
+          </div>
+          <div class="form-group">
+            <label for="p-city">Municipio / Ciudad</label>
+            <input type="text" id="p-city" class="form-control" placeholder="Ej. Granada" required>
+          </div>
+          <div class="form-group">
+            <label for="p-phone">Teléfono del Negocio (opcional)</label>
+            <input type="text" id="p-phone" class="form-control" placeholder="Ej. 8888-9999">
+          </div>
+          <div class="form-group">
+            <label for="p-details">¿Por qué crees que necesita una página web?</label>
+            <textarea id="p-details" class="form-control" placeholder="Ej. Tienen 60 reseñas excelentes pero no se les puede contactar por chat..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Propuesta
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <a href="#" class="footer-logo">Xavier <span>WebDev</span></a>
+      <div class="footer-text">
+        &copy; 2026 Xavier WebDev - Portafolio de Propuestas Comerciales. Todos los derechos reservados.
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/xavie" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://wa.me/50588888888?text=Hola%20Xavier,%20vi%20tu%20portafolio%20de%20propuestas%20web." target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle Mobile Menu
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const menuIcon = document.getElementById('menuIcon');
+      
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+        menuIcon.className = 'fa-solid fa-bars';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.backgroundColor = 'rgba(9, 13, 22, 0.98)';
+        navLinks.style.padding = '20px';
+        navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        menuIcon.className = 'fa-solid fa-xmark';
+      }
+    }
+
+    // Submit proposed business form to developer's WhatsApp
+    document.getElementById('propose-business-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('p-name').value;
+      const city = document.getElementById('p-city').value;
+      const phone = document.getElementById('p-phone').value || 'No disponible';
+      const details = document.getElementById('p-details').value;
+      
+      // Developer's WhatsApp Number
+      const devPhone = '50588888888';
+      
+      const text = `Hola Xavier, te propongo un nuevo negocio para prospectar:\n\n*Negocio:* ${name}\n*Ciudad:* ${city}\n*Teléfono:* ${phone}\n*Detalles:* ${details}`;
+      
+      const waUrl = `https://wa.me/${devPhone}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+
+    // Close mobile menu on clicking any link
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.getElementById('menuIcon');
+        if (window.innerWidth <= 768) {
+          navLinks.style.display = 'none';
+          menuIcon.className = 'fa-solid fa-bars';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

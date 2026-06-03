@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmacia La Salud - Tu Salud es Nuestra Prioridad en Masaya</title>
+  <meta name="description" content="Farmacia La Salud en Masaya, cerca del mercado municipal. Medicamentos originales, envío a domicilio, toma de presión y atención farmacéutica profesional. Abierto todos los días de 7 AM a 10 PM.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Variables y Estilos Base */
+    :root {
+      --primary: #0d9488; /* Verde Esmeralda Médico */
+      --primary-hover: #0f766e;
+      --secondary: #0f172a; /* Slate oscuro */
+      --accent: #0284c7; /* Azul Médico */
+      --bg-dark: #090f1a; /* Fondo oscuro moderno */
+      --bg-card: #141f32; /* Tarjetas azul oscuro */
+      --text-light: #f8fafc;
+      --text-gray: #94a3b8;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Propuesta Banner */
+    .proposal-banner {
+      background: linear-gradient(90deg, #0d9488, #0284c7);
+      color: #fff;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .proposal-banner a {
+      background: white;
+      color: var(--secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .proposal-banner a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .proposal-banner button {
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 10px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: rgba(9, 15, 26, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 36px; /* Ajuste por el banner */
+      z-index: 999;
+      border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .logo i {
+      color: var(--primary);
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 170px 24px 110px 24px;
+      background: linear-gradient(135deg, rgba(9, 15, 26, 0.96) 30%, rgba(13, 148, 136, 0.15) 100%), 
+                  url('https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .badge-reputacion {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(13, 148, 136, 0.4);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+      background: linear-gradient(to right, #0d9488, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      margin-bottom: 36px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      font-size: 0.95rem;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.6);
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 span {
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Sobre Nosotros */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .about-text p {
+      color: var(--text-gray);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .features-list {
+      list-style: none;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .features-list li i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background-color: var(--bg-card);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(13, 148, 136, 0.3);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .stat-number {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(13, 148, 136, 0.2);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(13, 148, 136, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background-color: var(--primary);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+
+    /* Reseñas */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .review-card {
+      background-color: var(--bg-card);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .reviewer-avatar {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(13, 148, 136, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .reviewer-name h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .stars {
+      color: #facc15;
+      font-size: 0.85rem;
+    }
+
+    .review-text {
+      color: var(--text-gray);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* Ubicación y Horarios */
+    .location-container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      background-color: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .map-frame {
+      min-height: 400px;
+      border: none;
+      filter: grayscale(0.7) invert(0.9) contrast(1.1) hue-rotate(140deg);
+      transition: var(--transition);
+    }
+
+    .map-frame:hover {
+      filter: none;
+    }
+
+    .location-info {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-item i {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-top: 4px;
+    }
+
+    .info-item h4 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .info-item p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-details h3 {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .contact-details p {
+      color: var(--text-gray);
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .contact-cards {
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-mini-card {
+      background-color: var(--bg-card);
+      padding: 24px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      text-decoration: none;
+      color: white;
+      transition: var(--transition);
+    }
+
+    .contact-mini-card:hover {
+      transform: translateX(5px);
+      border-color: rgba(13, 148, 136, 0.3);
+    }
+
+    .contact-mini-card i {
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .contact-mini-card.wa-style i {
+      color: #25d366;
+    }
+
+    .contact-mini-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .contact-mini-card p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    /* Formulario */
+    .contact-form-container {
+      background-color: var(--bg-card);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .contact-form-container h3 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      display: inline-block;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-gray);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(9, 15, 26, 0.6);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #04070c;
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(13, 148, 136, 0.08);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-text {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      width: 36px;
+      height: 36px;
+      background-color: var(--bg-card);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .location-container {
+        grid-template-columns: 1fr;
+      }
+      .map-frame {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .proposal-banner {
+        font-size: 0.8rem;
+        flex-direction: column;
+        gap: 6px;
+      }
+      header {
+        top: 60px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero {
+        padding: 120px 24px 80px 24px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Proposal Banner -->
+  <div class="proposal-banner" id="propBanner">
+    <span>💡 <strong>Propuesta de Diseño Web:</strong> ¿Te gustaría tener esta página activa para tu farmacia?</span>
+    <div>
+      <a href="https://wa.me/50588225566?text=Hola,%20vi%20la%20propuesta%20web%20para%20Farmacia%20La%20Salud%20y%20me%20interesa." target="_blank">¡Me interesa!</a>
+      <button onclick="document.getElementById('propBanner').style.display='none'; document.querySelector('header').style.top='0';">&times;</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-house-medical"></i> Farmacia <span>La Salud</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="badge-reputacion">
+        <i class="fa-solid fa-star"></i> 4.5 en Google Maps (19 Opiniones)
+      </div>
+      <h1>Tu bienestar y salud en las manos de <span>Expertos</span></h1>
+      <p>Ubicados convenientemente cerca del mercado municipal de Masaya. Medicamentos 100% de confianza, atención personalizada y servicio de delivery rápido directamente a tu casa.</p>
+      <div class="cta-group">
+        <a href="#contacto" class="btn btn-primary">Hacer Pedido</a>
+        <a href="https://wa.me/50588225566?text=Hola%20Farmacia%20La%20Salud,%20deseo%20consultar%20la%20disponibilidad%20de%20un%20medicamento." class="btn btn-whatsapp" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="sobre-nosotros">
+    <div class="about-grid">
+      <div class="about-text">
+        <div style="color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; font-size: 0.85rem; letter-spacing: 1px;">Sobre Nosotros</div>
+        <h3>Farmacia La Salud: Comprometidos con Masaya</h3>
+        <p>Establecidos estratégicamente en el corazón comercial de Masaya, a pocos pasos del mercado municipal, somos el aliado confiable de miles de familias de la zona.</p>
+        <p>Con una excelente calificación de ⭐ 4.5 basada en 19 opiniones verdaderas en Google Maps, nos distinguimos por no ser solo una farmacia de despacho, sino un centro de asesoramiento de salud familiar donde siempre encuentras lo que buscas a precios justos.</p>
+        <ul class="features-list">
+          <li><i class="fa-solid fa-shield-halved"></i> Medicamentos originales certificados</li>
+          <li><i class="fa-solid fa-truck-fast"></i> Servicio de entrega a domicilio veloz en Masaya</li>
+          <li><i class="fa-solid fa-user-doctor"></i> Personal calificado para asesoría farmacéutica</li>
+        </ul>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">4.5</div>
+          <div class="stat-label">Calificación ⭐</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">19</div>
+          <div class="stat-label">Reseñas en Maps</div>
+        </div>
+        <div class="stat-card" style="grid-column: span 2;">
+          <div class="stat-number">7 - 22</div>
+          <div class="stat-label">Abierto Todos los Días (Horas)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" style="background-color: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="section-title">
+      <h2>Servicios a <span>Tu Disposición</span></h2>
+      <p>Buscamos facilitarte el acceso a una vida sana mediante soluciones ágiles y profesionales.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-pills"></i></div>
+        <h3>Medicamentos Completos</h3>
+        <p>Amplio stock en medicinas bajo receta médica, genéricos de alta calidad y tratamientos crónicos.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3>Delivery Express</h3>
+        <p>Enviamos tus productos de manera rápida y segura directamente a tu casa o trabajo en Masaya.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+        <h3>Toma de Presión</h3>
+        <p>Servicio rápido de monitoreo de presión arterial y glucosa realizado por personal capacitado.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-pump-medical"></i></div>
+        <h3>Cuidado Personal</h3>
+        <p>Productos cosméticos, higiene personal, cuidado del bebé, suplementos vitamínicos y nutricionales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reseñas -->
+  <section id="reseñas">
+    <div class="section-title">
+      <h2>Opiniones de <span>Nuestros Vecinos</span></h2>
+      <p>Tu confianza es lo primero. Conoce lo que dicen quienes nos eligen día a día.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="reviewer-meta">
+          <div class="reviewer-avatar">PR</div>
+          <div class="reviewer-name">
+            <h4>Pedro Ramírez</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Siempre encuentro las medicinas que busco y la atención al cliente es muy amable. Tienen delivery rápido, lo cual es muy útil en emergencias."</p>
+      </div>
+      <div class="review-card">
+        <div class="reviewer-meta">
+          <div class="reviewer-avatar">SB</div>
+          <div class="reviewer-name">
+            <h4>Sofía Blandón</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Precios económicos y buena asesoría de los farmacéuticos. Muy céntrico, cerca del mercado municipal, es fácil de ubicar."</p>
+      </div>
+      <div class="review-card">
+        <div class="reviewer-meta">
+          <div class="reviewer-avatar">JA</div>
+          <div class="reviewer-name">
+            <h4>José Altamirano</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">"Excelente horario, abren temprano y cierran tarde. Atienden de manera muy humana y los domingos también está abierto todo el día."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" style="padding-top: 0;">
+    <div class="section-title">
+      <h2>Nuestra <span>Ubicación Exacta</span></h2>
+      <p>Nos situamos estratégicamente en Masaya. Revisa nuestra dirección exacta en el mapa interactivo.</p>
+    </div>
+    <div class="location-container">
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=Farmacia%20La%20Salud%20Masaya&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="location-info">
+        <div class="info-item">
+          <i class="fa-solid fa-map-pin"></i>
+          <div>
+            <h4>Dirección Física</h4>
+            <p>Cerca del mercado municipal, Masaya, Nicaragua</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div>
+            <h4>Horario Extendido</h4>
+            <p>Lunes a Domingo, 7:00 AM – 10:00 PM<br>(Abierto días feriados)</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone-flip"></i>
+          <div>
+            <h4>Teléfono de Contacto</h4>
+            <p>+505 8822-5566</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" style="background-color: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.02);">
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div style="color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; font-size: 0.85rem; letter-spacing: 1px;">Consultas y Pedidos</div>
+        <h3>¿Quieres encargar medicinas con delivery?</h3>
+        <p>Rellena el formulario interactivo con los medicamentos que necesitas (puedes describir la receta médica) y te enlazaremos a WhatsApp para procesar tu entrega inmediata.</p>
+        
+        <div class="contact-cards">
+          <a href="tel:88225566" class="contact-mini-card">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Llamar por Teléfono</h4>
+              <p>8822-5566 (Acceso rápido)</p>
+            </div>
+          </a>
+          <a href="https://wa.me/50588225566?text=Hola%20Farmacia%20La%20Salud,%20deseo%20hacer%20un%20pedido." class="contact-mini-card wa-style" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp de Pedidos</h4>
+              <p>Envíanos una foto de tu receta al 8822-5566</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h3>Cotizar por WhatsApp</h3>
+        <form id="wa-contact-form">
+          <div class="form-group">
+            <label for="form-name">Tu Nombre Completo</label>
+            <input type="text" id="form-name" class="form-control" placeholder="Ej. Pedro José Rodríguez" required>
+          </div>
+          <div class="form-group">
+            <label for="form-delivery">¿Requiere Delivery a domicilio?</label>
+            <select id="form-delivery" class="form-control" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Sí, con envío a domicilio">Sí, enviar a domicilio</option>
+              <option value="No, paso retirando por la sucursal">No, paso retirando por el local</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-address">Dirección de Envío (si aplica)</label>
+            <input type="text" id="form-address" class="form-control" placeholder="Ej. Barrio San Jerónimo, de la iglesia 2c al sur">
+          </div>
+          <div class="form-group">
+            <label for="form-medicines">Medicamentos que necesitas cotizar</label>
+            <textarea id="form-medicines" class="form-control" placeholder="Escribe los nombres de los fármacos o indica si tienes foto de la receta médica..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Pedido a WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-text">
+        &copy; 2026 Farmacia La Salud. Todos los derechos reservados.
+        <br>Cerca del mercado municipal, Masaya. Nicaragua.
+      </div>
+      <div class="footer-socials">
+        <a href="https://maps.google.com/?q=Farmacia+La+Salud+Masaya" target="_blank" title="Ver en Maps"><i class="fa-solid fa-map-pin"></i></a>
+        <a href="https://wa.me/50588225566" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Interaction -->
+  <script>
+    // Toggle Mobile Menu
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const menuIcon = document.getElementById('menuIcon');
+      
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+        menuIcon.className = 'fa-solid fa-bars';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.backgroundColor = 'rgba(9, 15, 26, 0.98)';
+        navLinks.style.padding = '20px';
+        navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        menuIcon.className = 'fa-solid fa-xmark';
+      }
+    }
+
+    // Form submission redirection to WhatsApp
+    document.getElementById('wa-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('form-name').value;
+      const delivery = document.getElementById('form-delivery').value;
+      const address = document.getElementById('form-address').value || 'Retiro en sucursal';
+      const medicines = document.getElementById('form-medicines').value;
+      
+      // WhatsApp Number of the business
+      const phone = '50588225566';
+      
+      const text = `Hola Farmacia La Salud, deseo realizar un pedido.\n\n*Nombre:* ${name}\n*Entrega:* ${delivery}\n*Dirección:* ${address}\n*Medicamentos a cotizar:* ${medicines}`;
+      
+      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+
+    // Close mobile menu on clicking any link
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.getElementById('menuIcon');
+        if (window.innerWidth <= 768) {
+          navLinks.style.display = 'none';
+          menuIcon.className = 'fa-solid fa-bars';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
